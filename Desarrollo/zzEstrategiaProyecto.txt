@@ -1,0 +1,16 @@
+Este proyecto final, parte del LRA y de las ideas discutidas con Elena
+duramte a reunión del 26/08/2025
+
+Se plantean 3 objetivos:
+
+# 1: Reformatear Excel_Padre:
+Ahora crearemos un excel para cada LIDAR y distinguiremos según ubicción:
+ --> Modificamos función leer_datos_origen con "ubicacion"
+
+
+
+# 2: Remodelaje de las funciones Excel
+Según las correcciones propuestas por Elena
+
+# 3: Remodelaje de las funciones correo
+

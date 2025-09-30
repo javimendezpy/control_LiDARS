@@ -1,0 +1,9 @@
+Durante esta parte del proyecto, aprendimos a mandar correos programados.
+
+El proyecto se interrumpe a fecha 26/08/2025, ya que antes de acabar de perfeccionar
+el formato del correo y las acciones de cada función, se requiere un remodelaje del formato 
+de las hojas historica y en consecuencia, del código. 
+
+
+De todos modos, las funciones leer_correos y enviar_correo serán de gran utilidad una vez
+acabemos con el remodelaje.

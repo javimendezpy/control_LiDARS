@@ -1,0 +1,53 @@
+_1
+
+Actualiza fecha
+
+_2 
+
+Actualiza fecha y añade en el historial
+
+_3
+
+Actualiza fecha y comentario y añade historial.
+El historial se llena con el penultimo amnteniimiento, es decir, el que ya había en el Excel Padre.
+Mejora considerable de la escalabilidad, nueva estructura de funciones.
+
+_4
+
+Actualiza también cambio de metanol y contabiliza cartuchos restantes en STOCK y cartuchos usados.
+
+_5
+
+Actualiza también el limpiaparabrisas.
+
+_6
+
+Remodelación del código. Llama las funciones del nuevo script mantenimiento.
+La función actualizar fecha comprueba que no esté la fecha repetida.
+Las funciones actualizar_fecha/comentario copian el ultimo mantenimiento directamente en el historial,
+ya no trabajan copiando del penultimo mantenimiento. 
+(Esto lo hace más consistente. En caso que el historial este vacío antes de la puesta en marcha del script,
+no hay más que copiar pegar a mano la columna con la fecha y comentario del penultimo mantenimiento).
+
+_7
+Remodelacion de la ficha mtto. Se cambia la posicion de los recambios de metanol y liquido, se quita la casilla
+cambio y la funcion comprueba solo si la casilla "añadido" está vacía o no.
+
+Remodelación completa de la funcion lectura de datos. Ahora:
+Actualiza también los filtros y las escobillas cambiadas.
+Actualiza el comentario con las incidencias del mantenimiento.
+
+_8
+Remodelación de las funciones. Creación de helpers que buscan las filas en la hojas de destino.
+Recuento de las baterías por cambiar: Cambio de la columna de " Buen estado baterias" a "Cambio baterias?".
+Registro de los sensores cambiados
+
+
+
+_Crear nuevo proyecto: LearningReportAlerts
+
+
+
+
+
+

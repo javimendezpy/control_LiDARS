@@ -1,0 +1,38 @@
+Instalación de paquetes de Python (sólo una vez):
+Antes de ejecutar el programa, es necesario instalar las librerías de Python requeridas. 
+Puedes hacerlo fácilmente usando pip, el gestor de paquetes de Python. Abre tu terminal o línea de comandos y ejecuta el siguiente comando:
+
+
+-- pip install pandas openpyxl numpy pywin32 tzlocal
+
+
+---Pasos para ejecutar el programa---
+
+Prepara los archivos Excel:
+
+- Asegúrate de que el archivo de origen, "informe_mtto_LIDARS.xlsx", contenga la información de mantenimiento más reciente:
+- Leer "informe_mtto_LiDARS.txt" para información detallada
+
+Verifica que los archivos de destino, como "Excel_Padre_LIDARS.xlsx" y los archivos históricos individuales, estén cerrados. 
+El script no se ejecutará si están abiertos.
+
+Verifica las rutas de los archivos:
+
+- Abre el script "Actualizar_Historico_LIDARS.py" y confirma que las rutas de los archivos definidas al inicio del código sean correctas
+  y coincidan con la ubicación de tus archivos en la red.
+- En la carpeta "HISTORICO LIDARS", aségurese que existe el archivo "plantilla_historico_LIDARS.xlsx". En caso que no, búsquelo en la carpeta 
+  "COPIAS DE SEGURIDAD" y añádalo a la carpeta 
+
+Ejecuta el script:
+
+- Desde tu terminal, ejecuta el script principal con el siguiente comando:
+
+-- python Actualizar_Historico_LIDARS.py
+
+- El programa mostrará mensajes de progreso y te pedirá que introduzcas información si es necesario 
+  (por ejemplo, si se está registrando un nuevo equipo o ubicación).
+
+Revisa si hay errores:
+
+- En caso de algún error, como un archivo no encontrado o un formato de datos incorrecto, el programa se detendrá y te lo indicará en la consola. 
+  Deberás corregir el problema y volver a ejecutar el script.
