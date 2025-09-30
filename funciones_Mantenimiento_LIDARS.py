@@ -1132,7 +1132,9 @@ def actualizar_incidencias_destino(informe_destino, n_equipo, codigo_incidencias
 
 # === Funcion de envío de email ===
 
-def enviar_correo(destinatario, asunto, mensaje, hora_envio=None, cc=None, adjuntos=None):
+def enviar_correo(destinatario, asunto, mensaje, 
+                  remitente="energias.renovables.es@dekra.com", 
+                  hora_envio=None, cc=None, adjuntos=None):
     """
     Programar el envío de un correo usando Outlook instalado en Windows.
     
@@ -1145,7 +1147,13 @@ def enviar_correo(destinatario, asunto, mensaje, hora_envio=None, cc=None, adjun
     - adjuntos: lista de rutas de archivos (opcional)
     """
     outlook = win32.Dispatch('Outlook.Application')
-    mail = outlook.CreateItem(0)  # 0 = MailItem
+    namespace = outlook.GetNamespace("MAPI")
+
+    # Abrir el buzón de la cuenta compartida
+    shared_mailbox = namespace.Folders(remitente)
+
+    # Crear correo dentro del buzón compartido
+    mail = shared_mailbox.Items.Add(0)  # 0 = MailItem
 
     # Destinatarios
     mail.To = ";".join(destinatario) if isinstance(destinatario, list) else destinatario

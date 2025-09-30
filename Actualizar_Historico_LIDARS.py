@@ -1,3 +1,10 @@
+
+
+
+####################### VERSIÓN EN LOCAL - PARA PRUEBAS #########################
+
+
+
 import pandas as pd
 import numpy as np
 from openpyxl import load_workbook # Para trabajar con archivos Excel
@@ -11,12 +18,21 @@ import os
 
 
 # Definimos nombre del archivo de origen y destino
-informe_mtto = r'\\S31889004.services.dekra.com\DKI\EOLICA\MAT REF\BASE DE DATOS ESTACIONES\control_LiDARS\informe_mtto_LIDARS.xlsx'
-informe_destino = r'\\S31889004.services.dekra.com\DKI\EOLICA\MAT REF\BASE DE DATOS ESTACIONES\control_LiDARS\Excel_Padre_LIDARS.xlsx'
-# Definimos la ruta del archivo que se usará como plantilla para crear nuevos informes historicos
-plantilla_historico = r'\\S31889004.services.dekra.com\DKI\EOLICA\MAT REF\BASE DE DATOS ESTACIONES\control_LiDARS\HISTORICO LIDARS\plantilla_historico_LIDARS.xlsx'
-# Definimos la ruta de la carpeta donde irán los excels con el histórico de cada LIDAR
-carpeta_destino_historico = r'\\S31889004.services.dekra.com\DKI\EOLICA\MAT REF\BASE DE DATOS ESTACIONES\control_LiDARS\HISTORICO LIDARS'
+# informe_mtto = r'\\S31889004.services.dekra.com\DKI\EOLICA\MAT REF\BASE DE DATOS ESTACIONES\control_LiDARS\informe_mtto_LIDARS.xlsx'
+# informe_destino = r'\\S31889004.services.dekra.com\DKI\EOLICA\MAT REF\BASE DE DATOS ESTACIONES\control_LiDARS\Excel_Padre_LIDARS.xlsx'
+# # Definimos la ruta del archivo que se usará como plantilla para crear nuevos informes historicos
+# plantilla_historico = r'\\S31889004.services.dekra.com\DKI\EOLICA\MAT REF\BASE DE DATOS ESTACIONES\control_LiDARS\HISTORICO LIDARS\plantilla_historico_LIDARS.xlsx'
+# # Definimos la ruta de la carpeta donde irán los excels con el histórico de cada LIDAR
+# carpeta_destino_historico = r'\\S31889004.services.dekra.com\DKI\EOLICA\MAT REF\BASE DE DATOS ESTACIONES\control_LiDARS\HISTORICO LIDARS'
+
+
+# Trabajar en local
+informe_mtto = r"C:\Users\A510633\Desktop\Javi\control_LiDARS\informe_mtto_LIDARS.xlsx"
+informe_destino = r"C:\Users\A510633\Desktop\Javi\control_LiDARS\Excel_Padre_LIDARS.xlsx"
+plantilla_historico = r"C:\Users\A510633\Desktop\Javi\control_LiDARS\HISTORICO LIDARS\plantilla_historico_LIDARS.xlsx"
+carpeta_destino_historico = r"C:\Users\A510633\Desktop\Javi\control_LiDARS\HISTORICO LIDARS"
+
+
 # Definimos nombre de las hojas de origen y destino
 hoja_mtto = 'Hoja1' # Nombre de la hoja del archivo de origen
 hoja_destino = 'Lidars' #Nombre de la hoja del archivo destino
@@ -108,8 +124,8 @@ def main_correo(n_equipo, ubicacion, fecha_ultimomantenimiento, comentario_ultim
         mensaje += "Por favor, ten en cuenta las siguientes incidencias para el próximo mantenimiento:\n"
         for incidencia in codigo_incidencias:
             mensaje += f"- {incidencia}\n"
-    enviar_correo(destinatario=correos_destino, asunto=f"Información para el próximo mantenimientocdel equipo {n_equipo}", \
-                  mensaje=mensaje, hora_envio=fecha_envio, cc=None, adjuntos=informe_mtto)
+    enviar_correo(destinatario=correos_destino, asunto=f"Información para el próximo mantenimiento del equipo {n_equipo}", \
+                  mensaje=mensaje, remitente="energias.renovables.es@dekra.com", hora_envio=fecha_envio, cc=None, adjuntos=informe_mtto)
 
 
 # Ejecutar la función principal
